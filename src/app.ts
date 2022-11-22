@@ -37,7 +37,7 @@ app.post('/signup', async (req, res) => {
   const fetchOptions = {
     method: 'POST',
     headers: {
-      'x-tradecore-auth': TC_API_KEY || '',
+      'x-tradecore-auth': TC_API_KEY,
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
@@ -58,6 +58,16 @@ app.post('/signup', async (req, res) => {
     console.log('Uh-oh, something went wrong!', error);
   }
 });
+
+
+
+app.put('/updateprofile', async (req, res) => {
+  const { userId } = req.body;
+
+  
+
+
+})
 
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
