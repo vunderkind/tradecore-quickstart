@@ -21,7 +21,7 @@ type SignupRequest = {
   email: string,
   password: string,
   reference: string,
-  referenceId: string
+  referenceId: string | undefined
 }
 
 app.post('/signup', async (req, res) => {
@@ -31,13 +31,13 @@ app.post('/signup', async (req, res) => {
     email,
     password,
     reference: "application",
-    referenceId: '' // Add your TC APPLICATION ID here
+    referenceId: TC_APPLICATION_ID
   }
   
   const fetchOptions = {
     method: 'POST',
     headers: {
-      'x-tradecore-auth': '', // Add your TC API key here,
+      'x-tradecore-auth': TC_API_KEY || '',
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
