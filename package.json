@@ -1,0 +1,42 @@
+{
+  "name": "tradecore-quickstart",
+  "version": "1.0.0",
+  "description": "quick-start tutorial for TradeCore's docs",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && nodemon dist/app.js",
+    "test": "test",
+    "lint": "npx eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vunderkind/tradecore-quickstart.git"
+  },
+  "keywords": [
+    "tradecore",
+    "crypto",
+    "finance",
+    "wallets",
+    "fintech",
+    "apis",
+    "tutorials"
+  ],
+  "author": "Justin Irabor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vunderkind/tradecore-quickstart/issues"
+  },
+  "homepage": "https://github.com/vunderkind/tradecore-quickstart#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "eslint": "^8.27.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1"
+  }
+}
