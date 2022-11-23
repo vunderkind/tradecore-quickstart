@@ -49,7 +49,7 @@ app.post('/signup', async (req, res) => {
     .then(async data => {
       const USER_CREATED = await data.json();
       console.log(USER_CREATED);
-      res.status(USER_CREATED.code).send(USER_CREATED);
+      res.status(USER_CREATED.code || 200).send(USER_CREATED);
     });
 
   }
