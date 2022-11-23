@@ -58,7 +58,31 @@ app.post('/signup', async (req, res) => {
   }
 });
 
-// ADD USER UPDATING LOGIC HERE!
+
+app.put('/updateuser/:userId', async (req, res) => {
+    const { userId } = req.params;
+
+    const fetchOptions = {
+    method: 'PUT',
+    headers: {
+      'x-tradecore-auth': TC_API_KEY,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+        body: JSON.stringify(req.body),
+  }
+
+  try {
+    await fetch(`${TC_BASE_URL}/users/${userId}`, fetchOptions)
+      .then(async data => {
+        const USER_UPDATED = await data.json();
+        console.log('User updated!', USER_UPDATED);
+        res.status(USER_UPDATED.code || 200).send(USER_UPDATED);
+      })
+    } catch (error) {
+      console.log('Something gnarly went wrong: ', error);
+    }
+})
 
 
 export default app;
