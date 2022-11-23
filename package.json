@@ -4,7 +4,7 @@
   "description": "quick-start tutorial for TradeCore's docs",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && nodemon dist/app.js",
+    "start": "tsc && nodemon dist/index.js",
     "test": "test",
     "lint": "npx eslint . --ext .ts"
   },

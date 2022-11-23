@@ -1,7 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 const app = express();
-const port = 3000;
 
 dotenv.config();
 
@@ -60,15 +59,4 @@ app.post('/signup', async (req, res) => {
 });
 
 
-
-app.put('/updateprofile', async (req, res) => {
-  const { userId } = req.body;
-
-  
-
-
-})
-
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-});
+export default app;
