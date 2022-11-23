@@ -47,7 +47,6 @@ app.post('/signup', async (req, res) => {
     await fetch(`${TC_BASE_URL}/${TC_SIGNUP_PATH}`, fetchOptions)
     .then(async data => {
       const USER_CREATED = await data.json();
-      console.log(USER_CREATED);
       res.status(USER_CREATED.code || 200).send(USER_CREATED);
     });
 
@@ -76,7 +75,6 @@ app.put('/updateuser/:userId', async (req, res) => {
     await fetch(`${TC_BASE_URL}/users/${userId}`, fetchOptions)
       .then(async data => {
         const USER_UPDATED = await data.json();
-        console.log('User updated!', USER_UPDATED);
         res.status(USER_UPDATED.code || 200).send(USER_UPDATED);
       })
     } catch (error) {
