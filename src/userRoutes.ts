@@ -75,7 +75,7 @@ app.put('/updateuser/:userId', async (req, res) => {
     await fetch(`${TC_BASE_URL}/users/${userId}`, fetchOptions)
       .then(async data => {
         const USER_UPDATED = await data.json();
-        res.status(USER_UPDATED.code || 200).send(USER_UPDATED);
+        res.status(200).send(USER_UPDATED);
       })
     } catch (error) {
       console.log('Something gnarly went wrong: ', error);
